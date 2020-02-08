@@ -9,12 +9,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+import java.io.IOException;
+
 @Configuration
 @SpringBootApplication
 public class MvcsampleApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SpringApplication.run(MvcsampleApplication.class, args);
+
+        System.out.println("Press ENTER to exit.");
+        if (System.in.read() == 10) System.exit(0);
     }
 
     @Bean
